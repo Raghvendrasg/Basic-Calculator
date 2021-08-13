@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function dis(val) {
+            document.getElementById('result').value += val;
+        }
+        function solve() {
+            let x = document.getElementById('result').value
+            let y = eval(x)
+            document.getElementById("result").value = y;
+        }
+        function clr() {
+            document.getElementById('result').value = "";
+        }
+        function back() {
+            var value = document.getElementById("d").value;
+            document.getElementById("d").value = value.substr(0, value.length - 1);
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALC</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container
+        {
+            /* margin-top:-650px; */
+            margin-top:-250px;
+            /* margin-right:-370px;  */
+            position: absolute;
+            
+            color:lime;
+            font-size:18px;
+            text-align: left;
+            font-style: italic;
+
+
+        }
+        /* .container:hover
+        {
+          
+            color:lime;
+            transform:rotate(360);
+            transform: skew(40deg);
+            transform: scale(4);
+        } */
+        /* .container .h2
+        {
+            font-size:500 px;
+
+        } */
+     
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background-color:black; */
+            background-color:black;
+        }
+        
+        .calculator {
+            margin-top:-50px;
+            position: absolute;
+            bottom: 45px;
+            display: grid;
+            background: lightslategrey;
+        }
+        .calculator .value {
+            grid-column: span 4;
+            height: 100px;
+            text-align: right;
+            border: none;
+            outline: none;
+        }
+
+        .calculator span {
+            display: grid;
+            width: 60px;
+            height: 60px;
+            color: #fff;
+            background: #0c2835;
+            background: center;
+            place-items: center;
+            border: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .calculator span:active {
+            background: orange;
+            color: #111;
+        }
+
+        .calculator span.clear {
+            grid-column: span 2;
+            width: 120px;
+            background: #ff3077;
+        }
+
+        .calculator span.plus {
+            grid-row: span 2;
+            height: 120px;
+        }
+
+        .calculator span.equal {
+            background: #03b1ff;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="to">
+        <h1>CALCULATOR</h1>
+    </div>
+   
+    <form class="calculator" name="calc">
+        <input class="value" type name="txt" readonly="">
+        <span class="num clear" onclick="document.calc.txt.value =''">clear</span>
+        <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+        <span class="num" onclick="document.calc.txt.value +='*'">*</span>
+        <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+        <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+        <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+        <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+        <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+        <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+        <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+        <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+        <span class="num" onclick="document.calc.txt.value +='3'">1</span>
+        <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+        <span class="num" onclick="document.calc.txt.value +='1'">3</span>
+        <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+        <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+        <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+        <span class="num equal" onclick="document.calc.txt.value =eval(calc.txt.value)">=</span>
+    </form>
+    
+        </script>
+    </div>
+</body>
+
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container
+    {
+        font-size:24px;
+        margin-top:250px;
+        margin-left:400px;
+        /* padding-left: -90px;
+        padding-top: -80px; */
+        text-align: left;
+    }
+    .container:hover
+    {
+        font-style: italic;
+        font-size:50px;
+        color:darkmagenta;
+
+    }
+    .t
+    {
+        font-size: 50px;
+        margin-top:150px;
+        margin-left:200px;
+        color:midnightblue;
+        margin-top:20px;
+        margin-left:500px;
+
+    }
+    .t:hover
+    {
+        font-style: oblique;
+        font-size: 70px;
+        color: deepskyblue;
+    }
+
+</style>
+<body>
+    <div class="t">
+        <h1>TIME</h1>
+    </div>
+    <div class="container">
+     
+        Time now is <span id="time"></span>
+    </div>
+    <script>
+    function displayTime()
+    {
+            time=new Date();
+            console.log(time);
+            document.getElementById('time').innerHTML=time;
+    }
+        setInterval(displayTime,1000);
+    </script>
+</body>
+</html> -->
